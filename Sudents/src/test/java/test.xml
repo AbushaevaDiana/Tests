@@ -1,0 +1,123 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Тестирование формы логинации" verbose="1" >
+    <test name="Аторизация с существующим логином без пароля" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value=""/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующим паролем без логина" >
+        <parameter name="login" value=""/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с пустыми полями" >
+        <parameter name="login" value=""/>
+        <parameter name="password" value=""/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидными, не существующими логином и паролем" >
+        <parameter name="login" value="123Test7748"/>
+        <parameter name="password" value="123Test876"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидным, не существующими логином и существующим паролем" >
+        <parameter name="login" value="123Test7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидным, не существующими паролем и существующим логином" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином, в которых верхний и нижний регистр поменяны местами" >
+        <parameter name="login" value="tEST7748"/>
+        <parameter name="password" value="123tEST12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином, в пароле верхний и нижний регистр поменяны местами" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123tEST12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с не волидным логином" >
+        <parameter name="login" value="Логин12"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с не волидным паролем" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123اختبار12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с не волидным логином" >
+        <parameter name="login" value="تسجيل الدخول"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед логином)" >
+        <parameter name="login" value=" Test7748"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед паролем)" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value=" 123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом после пароля)" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123Тест12 "/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине логина)" >
+        <parameter name="login" value="Test 7748"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине пароля)" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123 Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине пароля)" >
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123 Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+</suite>
