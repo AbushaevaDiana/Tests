@@ -12,11 +12,17 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
     private WebDriver driver;
+
     @Test(description = "Авторизация на форме")
-    @Parameters({"login", "password", "test"})
-    public void loginTest(String login, String password, String test) {
-        System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
-        driver = new ChromeDriver();
+    @Parameters({"login", "password", "test", "browser"})
+    public void loginTest(String login, String password, String test, String browser) {
+        if (browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
+            driver = new ChromeDriver();
+        } else if (browser.equals("edge")) {
+            System.setProperty("webdriver.ie.driver", "C:\\driver\\msedgedriver.exe");
+            driver = new EdgeDriver();
+        }
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
 
