@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
@@ -12,9 +13,9 @@ import java.util.concurrent.TimeUnit;
 public class LoginTest {
     private WebDriver driver;
     @Test(description = "Авторизация на форме")
-    @Parameters({"login", "password"})
-    public void loginTest(String login, String password) {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+    @Parameters({"login", "password", "test"})
+    public void loginTest(String login, String password, String test) {
+        System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
@@ -27,9 +28,14 @@ public class LoginTest {
 
         WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='Войти']"));
         loginButton.click();
+        if (test.equals("-")) {
+            WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
+            Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
+        } else {
+            String url = driver.getCurrentUrl();
+            Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
+        }
 
-        WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
-        Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
     }
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
