@@ -41,7 +41,6 @@ public class LoginTest {
             String url = driver.getCurrentUrl();
             Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
         }
-
     }
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)

@@ -172,4 +172,176 @@
             <class name="LoginTest"/>
         </classes>
     </test>
+    <test name="Авторизация с пустыми полями" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value=""/>
+        <parameter name="password" value=""/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="+"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином, в  логине верхний и нижний регистр поменяны местами" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="+"/>
+        <parameter name="login" value="tEST7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом после логина)" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="+"/>
+        <parameter name="login" value="Test7748  "/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Аторизация с существующим логином без пароля" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value=""/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующим паролем без логина" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value=""/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидными, несуществующими логином и паролем" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="123Test7748"/>
+        <parameter name="password" value="123Test876"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидным, несуществующими логином и существующим паролем" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="123Test7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с валидным, несуществующими паролем и существующим логином" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином, в которых верхний и нижний регистр поменяны местами" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="tEST7748"/>
+        <parameter name="password" value="123tEST12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином, в пароле верхний и нижний регистр поменяны местами" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123tEST12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с не валидным логином" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Логин12"/>
+        <parameter name="password" value="123Test12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с невалидным паролем" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123اختبار12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с невалидным логином и паролем" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="تسجيل الدخول"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед логином) " >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value=" Test7748"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед паролем)" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value=" 123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом после пароля)" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123Тест12 "/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине логина)" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test 7748"/>
+        <parameter name="password" value="123Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+    <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине пароля)" >
+        <parameter name="browser" value="edge"/>
+        <parameter name="test" value="-"/>
+        <parameter name="login" value="Test7748"/>
+        <parameter name="password" value="123 Тест12"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
 </suite>
