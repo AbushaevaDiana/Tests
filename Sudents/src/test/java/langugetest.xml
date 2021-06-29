@@ -2,7 +2,7 @@
 <suite name="Тестирование переключения языков" verbose="1" >
     <test name="Англиский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value='Login'/>
+        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Log in']"/>
         <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[2]"/>
         <classes>
             <class name="LoginTest"/>
@@ -11,7 +11,7 @@
 
     <test name="Французский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value='Login'/>
+        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Se connecter']"/>
         <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[3]"/>
         <classes>
             <class name="LoginTest"/>

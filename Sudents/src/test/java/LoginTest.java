@@ -40,8 +40,8 @@ public class LoginTest {
         WebElement lanButtonTest = driver.findElement(By.xpath(xpath));
         lanButtonTest.click();
 
-
-
+        WebElement loginButton = driver.findElement(By.xpath(text));
+        Assert.assertTrue(loginButton.isDisplayed(), "Неверный язык");
     }
 
     @Test(description = "Авторизация на форме")
