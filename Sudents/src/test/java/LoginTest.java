@@ -31,6 +31,19 @@ public class LoginTest {
         driver.get("https://www.qatl.ru/secure/");
     }
 
+    @Test
+    @Parameters({"text", "xpath"})
+    public void languageTest(String text, String xpath){
+        WebElement languageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
+        languageTest.click();
+
+        WebElement lanButtonTest = driver.findElement(By.xpath(xpath));
+        lanButtonTest.click();
+
+
+
+    }
+
     @Test(description = "Авторизация на форме")
     @Parameters({"login", "password", "test"})
     public void loginTest(String login, String password, String test) {
@@ -52,29 +65,6 @@ public class LoginTest {
         }
     }
 
-    @Test
-    public void LanguageTest(){
-        WebElement LanguageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
-        LanguageTest.click();
-
-        WebElement EngButtonTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div/div/ul/li[2]"));
-        EngButtonTest.click();
-
-        WebElement alert = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='Log in']"));
-        Assert.assertTrue(alert.isDisplayed(), "Вход в личный кабинет ");
-
-        WebElement Language2Test = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
-        Language2Test.click();
-    }
-
-    @Test(description = "Проверка перехода на страницу AppStore по ссылке")
-    public void AppStoreTest(){
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.get("https://www.qatl.ru/secure/");
-
-        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[1]"));
-        AppStoreTest.click();
-    }
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
     private void closeDriver() {

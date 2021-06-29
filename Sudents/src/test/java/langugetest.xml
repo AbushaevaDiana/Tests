@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Тестирование переключения языков" verbose="1" >
+    <test name="Англиский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[2]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Французский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[3]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Украинский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[4]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Польский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[5]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Грузинский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[6]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Белорусский(ch)" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="text" value='Login'/>
+        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[7]"/>
+        <classes>
+            <class name="LoginTest"/>
+        </classes>
+    </test>
+</suite>
