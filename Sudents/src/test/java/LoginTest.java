@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
@@ -13,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 public class LoginTest {
     private WebDriver driver;
 
-    @Test(description = "Авторизация на форме")
-    @Parameters({"login", "password", "test", "browser"})
-    public void loginTest(String login, String password, String test, String browser) {
+    @BeforeMethod
+    @Parameters({"browser"})
+    public void setUp(String browser){
         if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
             driver = new ChromeDriver();
@@ -26,9 +27,13 @@ public class LoginTest {
             System.setProperty("webdriver.ie.driver", "C:\\driver\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
-
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
+    }
+
+    @Test(description = "Авторизация на форме")
+    @Parameters({"login", "password", "test"})
+    public void loginTest(String login, String password, String test) {
 
         WebElement loginInput = driver.findElement(By.name("username"));
         loginInput.sendKeys(login);
@@ -45,6 +50,30 @@ public class LoginTest {
             String url = driver.getCurrentUrl();
             Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
         }
+    }
+
+    @Test
+    public void LanguageTest(){
+        WebElement LanguageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
+        LanguageTest.click();
+
+        WebElement EngButtonTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div/div/ul/li[2]"));
+        EngButtonTest.click();
+
+        WebElement alert = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='Log in']"));
+        Assert.assertTrue(alert.isDisplayed(), "Вход в личный кабинет ");
+
+        WebElement Language2Test = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
+        Language2Test.click();
+    }
+
+    @Test(description = "Проверка перехода на страницу AppStore по ссылке")
+    public void AppStoreTest(){
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.get("https://www.qatl.ru/secure/");
+
+        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[1]"));
+        AppStoreTest.click();
     }
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
