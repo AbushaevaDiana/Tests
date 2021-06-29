@@ -2,8 +2,8 @@
 <suite name="Тестирование переключения языков" verbose="1" >
     <test name="Англиский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Log in']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[2]"/>
+        <parameter name="text" value="Log in"/>
+        <parameter name="number" value="2"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -11,8 +11,8 @@
 
     <test name="Французский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Se connecter']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[3]"/>
+        <parameter name="text" value="Se connecter'"/>
+        <parameter name="number" value="3"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -20,8 +20,8 @@
 
     <test name="Украинский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Увійти']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[4]"/>
+        <parameter name="text" value="Увійти"/>
+        <parameter name="number" value="4"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -29,8 +29,8 @@
 
     <test name="Польский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Wejdź']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[5]"/>
+        <parameter name="text" value="Wejdź"/>
+        <parameter name="number" value="5"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -38,8 +38,8 @@
 
     <test name="Грузинский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='შესვლა']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[6]"/>
+        <parameter name="text" value="შესვლა"/>
+        <parameter name="number" value="6"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -47,16 +47,16 @@
 
     <test name="Белорусский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Влизане']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[7]"/>
+        <parameter name="text" value="Влизане"/>
+        <parameter name="number" value="7"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
     </test>
     <test name="Англиский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Log in']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[2]"/>
+        <parameter name="text" value="Log in"/>
+        <parameter name="number" value="2"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -64,8 +64,8 @@
 
     <test name="Французский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Se connecter']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[3]"/>
+        <parameter name="text" value="Se connecter"/>
+        <parameter name="number" value="3"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -73,8 +73,8 @@
 
     <test name="Украинский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Увійти']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[4]"/>
+        <parameter name="text" value="Увійти"/>
+        <parameter name="number" value="4"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -82,8 +82,8 @@
 
     <test name="Польский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Wejdź']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[5]"/>
+        <parameter name="text" value="Wejdź"/>
+        <parameter name="number" value="5"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -91,8 +91,8 @@
 
     <test name="Грузинский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='შესვლა']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[6]"/>
+        <parameter name="text" value="შესვლა"/>
+        <parameter name="number" value="6"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -100,16 +100,16 @@
 
     <test name="Белорусский(f)" >
         <parameter name="browser" value="firefox"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Влизане']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[7]"/>
+        <parameter name="text" value="Влизане"/>
+        <parameter name="number" value="7"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
     </test>
     <test name="Англиский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Log in']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[2]"/>
+        <parameter name="text" value="Log in"/>
+        <parameter name="number" value="2"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -117,8 +117,8 @@
 
     <test name="Французский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Se connecter']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[3]"/>
+        <parameter name="text" value="Se connecter"/>
+        <parameter name="number" value="3"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -126,8 +126,8 @@
 
     <test name="Украинский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Увійти']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[4]"/>
+        <parameter name="text" value="Увійти"/>
+        <parameter name="number" value="4"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -135,8 +135,8 @@
 
     <test name="Польский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Wejdź']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[5]"/>
+        <parameter name="text" value="Wejdź"/>
+        <parameter name="number" value="5"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -144,8 +144,8 @@
 
     <test name="Грузинский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='შესვლა']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[6]"/>
+        <parameter name="text" value="შესვლა"/>
+        <parameter name="number" value="6"/>
         <classes>
             <class name="LoginTest"/>
         </classes>
@@ -153,8 +153,8 @@
 
     <test name="Белорусский(ed)" >
         <parameter name="browser" value="edge"/>
-        <parameter name="text" value="//*[@id='login-form']//tl-button[@text='Влизане']"/>
-        <parameter name="xpath" value="//*[@id=\'lang-dropdown\']/div/div/ul/li[7]"/>
+        <parameter name="text" value="Влизане"/>
+        <parameter name="number" value="7"/>
         <classes>
             <class name="LoginTest"/>
         </classes>

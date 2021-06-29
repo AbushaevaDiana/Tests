@@ -38,17 +38,19 @@ public class LoginTest {
     }
 
     @Test(description = "Изменмение языка")
-    @Parameters({"text", "xpath"})
-    public void languageTest(String text, String xpath){
+    @Parameters({"text", "number"})
+    public void languageTest(String text, String number){
+
         WebElement languageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
         languageTest.click();
 
-        WebElement lanButtonTest = driver.findElement(By.xpath(xpath));
+        WebElement lanButtonTest = driver.findElement(By.xpath("//*[@id='lang-dropdown']/div/div/ul/li["+number+"]"));
         lanButtonTest.click();
 
-        WebElement loginButton = driver.findElement(By.xpath(text));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='"+text+"']"));
         Assert.assertTrue(loginButton.isDisplayed(), "Неверный язык");
     }
+
 
     @Test(description = "Авторизация на форме")
     @Parameters({"login", "password", "test"})
