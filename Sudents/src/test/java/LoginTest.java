@@ -31,7 +31,7 @@ public class LoginTest {
         driver.get("https://www.qatl.ru/secure/");
     }
 
-    @Test
+    @Test(description = "Изменмение языка")
     @Parameters({"text", "xpath"})
     public void languageTest(String text, String xpath){
         WebElement languageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
@@ -63,6 +63,30 @@ public class LoginTest {
             String url = driver.getCurrentUrl();
             Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
         }
+    }
+
+    @Test(description = "Переход в AppStore")
+    public void AppStoreTest(){
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.get("https://www.qatl.ru/secure/");
+
+        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[1]"));
+        AppStoreTest.click();
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals(url, "https://apps.apple.com/ru/app/tl-extranet/id1137018179", "Переход неосуществлен");
+
+    }
+
+    @Test(description = "Переход в Google Play")
+    public void GooglePlayTest(){
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.get("https://www.qatl.ru/secure/");
+
+        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[2]"));
+        AppStoreTest.click();
+
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals(url, "https://play.google.com/store/apps/details?id=ru.travelline.extranet", "Переход неосуществлен");
     }
 
 
