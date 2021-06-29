@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
@@ -21,7 +22,11 @@ public class LoginTest {
         } else if (browser.equals("edge")) {
             System.setProperty("webdriver.ie.driver", "C:\\driver\\msedgedriver.exe");
             driver = new EdgeDriver();
+        } else if (browser.equals("firefox")) {
+            System.setProperty("webdriver.ie.driver", "C:\\driver\\geckodriver.exe");
+            driver = new FirefoxDriver();
         }
+
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
 
