@@ -17,18 +17,24 @@ public class LoginTest {
     @BeforeMethod
     @Parameters({"browser"})
     public void setUp(String browser){
+        driver = getBrowser(browser);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://www.qatl.ru/secure/");
+    }
+    public WebDriver getBrowser(String browser) {
         if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
-            driver = new ChromeDriver();
-        } else if (browser.equals("edge")) {
-            System.setProperty("webdriver.ie.driver", "C:\\driver\\msedgedriver.exe");
-            driver = new EdgeDriver();
-        } else if (browser.equals("firefox")) {
-            System.setProperty("webdriver.ie.driver", "C:\\driver\\geckodriver.exe");
-            driver = new FirefoxDriver();
+            return new ChromeDriver();
         }
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.get("https://www.qatl.ru/secure/");
+        if (browser.equals("edge")) {
+            System.setProperty("webdriver.edge.driver", "C:\\driver\\msedgedriver.exe");
+            return new EdgeDriver();
+        }
+        if (browser.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", "C:\\driver\\geckodriver.exe");
+            return new FirefoxDriver();
+        }
+        return null;
     }
 
     @Test(description = "Изменмение языка")
@@ -56,6 +62,10 @@ public class LoginTest {
 
         WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='Войти']"));
         loginButton.click();
+
+        errorMessagesForPositiveAndNegativeLoginTests(test);
+    }
+    private void errorMessagesForPositiveAndNegativeLoginTests(String test){
         if (test.equals("-")) {
             WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
             Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
@@ -64,31 +74,6 @@ public class LoginTest {
             Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
         }
     }
-
-    @Test(description = "Переход в AppStore")
-    public void AppStoreTest(){
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.get("https://www.qatl.ru/secure/");
-
-        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[1]"));
-        AppStoreTest.click();
-        String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://apps.apple.com/ru/app/tl-extranet/id1137018179", "Переход неосуществлен");
-
-    }
-
-    @Test(description = "Переход в Google Play")
-    public void GooglePlayTest(){
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.get("https://www.qatl.ru/secure/");
-
-        WebElement AppStoreTest = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[2]/div[2]"));
-        AppStoreTest.click();
-
-        String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://play.google.com/store/apps/details?id=ru.travelline.extranet", "Переход неосуществлен");
-    }
-
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
     private void closeDriver() {
