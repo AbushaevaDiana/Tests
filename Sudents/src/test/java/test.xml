@@ -7,7 +7,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с пустыми полями" >
@@ -16,7 +16,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином, в  логине верхний и нижний регистр поменяны местами" >
@@ -25,7 +25,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом после логина)" >
@@ -34,7 +34,7 @@
         <parameter name="login" value="Test7748  "/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -44,7 +44,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующим паролем без логина" >
@@ -53,7 +53,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с валидными, несуществующими логином и паролем" >
@@ -62,7 +62,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test876"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с валидным, несуществующими логином и существующим паролем" >
@@ -71,7 +71,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с валидным, несуществующими паролем и существующим логином" >
@@ -80,7 +80,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином, в которых верхний и нижний регистр поменяны местами" >
@@ -89,7 +89,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином, в пароле верхний и нижний регистр поменяны местами" >
@@ -98,7 +98,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с не валидным логином" >
@@ -107,7 +107,7 @@
         <parameter name="login" value="Логин12"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с невалидным паролем" >
@@ -116,7 +116,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123اختبار12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с невалидным логином и паролем" >
@@ -125,7 +125,7 @@
         <parameter name="login" value="تسجيل الدخول"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед логином) " >
@@ -134,7 +134,7 @@
         <parameter name="login" value=" Test7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом перед паролем)" >
@@ -143,7 +143,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=" 123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом после пароля)" >
@@ -152,7 +152,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Тест12 "/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине логина)" >
@@ -161,7 +161,7 @@
         <parameter name="login" value="Test 7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация с существующими подходящими паролем и логином(с пробелом в середине пароля) " >
@@ -170,7 +170,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123 Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с пустыми полями" >
@@ -179,7 +179,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином" >
@@ -188,7 +188,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином, в  логине верхний и нижний регистр поменяны местами" >
@@ -197,7 +197,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом после логина)" >
@@ -206,7 +206,7 @@
         <parameter name="login" value="Test7748  "/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -216,7 +216,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующим паролем без логина" >
@@ -225,7 +225,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с валидными, несуществующими логином и паролем" >
@@ -234,7 +234,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test876"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с валидным, несуществующими логином и существующим паролем" >
@@ -243,7 +243,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с валидным, несуществующими паролем и существующим логином" >
@@ -252,7 +252,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином, в которых верхний и нижний регистр поменяны местами" >
@@ -261,7 +261,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином, в пароле верхний и нижний регистр поменяны местами" >
@@ -270,7 +270,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с не валидным логином" >
@@ -279,7 +279,7 @@
         <parameter name="login" value="Логин12"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с невалидным паролем" >
@@ -288,7 +288,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123اختبار12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с невалидным логином и паролем" >
@@ -297,7 +297,7 @@
         <parameter name="login" value="تسجيل الدخول"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом перед логином) " >
@@ -306,7 +306,7 @@
         <parameter name="login" value=" Test7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом перед паролем)" >
@@ -315,7 +315,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=" 123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом после пароля)" >
@@ -324,7 +324,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Тест12 "/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом в середине логина)" >
@@ -333,7 +333,7 @@
         <parameter name="login" value="Test 7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(e) с существующими подходящими паролем и логином(с пробелом в середине пароля)" >
@@ -342,7 +342,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123 Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с пустыми полями" >
@@ -351,7 +351,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином" >
@@ -360,7 +360,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином, в  логине верхний и нижний регистр поменяны местами" >
@@ -369,7 +369,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом после логина)" >
@@ -378,7 +378,7 @@
         <parameter name="login" value="Test7748  "/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -388,7 +388,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=""/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующим паролем без логина" >
@@ -397,7 +397,7 @@
         <parameter name="login" value=""/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с валидными, несуществующими логином и паролем" >
@@ -406,7 +406,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test876"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с валидным, несуществующими логином и существующим паролем" >
@@ -415,7 +415,7 @@
         <parameter name="login" value="123Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с валидным, несуществующими паролем и существующим логином" >
@@ -424,7 +424,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином, в которых верхний и нижний регистр поменяны местами" >
@@ -433,7 +433,7 @@
         <parameter name="login" value="tEST7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином, в пароле верхний и нижний регистр поменяны местами" >
@@ -442,7 +442,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123tEST12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с не валидным логином" >
@@ -451,7 +451,7 @@
         <parameter name="login" value="Логин12"/>
         <parameter name="password" value="123Test12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с невалидным паролем" >
@@ -460,7 +460,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123اختبار12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с невалидным логином и паролем" >
@@ -469,7 +469,7 @@
         <parameter name="login" value="تسجيل الدخول"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом перед логином) " >
@@ -478,7 +478,7 @@
         <parameter name="login" value=" Test7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом перед паролем)" >
@@ -487,7 +487,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value=" 123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом после пароля)" >
@@ -496,7 +496,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123Тест12 "/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом в середине логина)" >
@@ -505,7 +505,7 @@
         <parameter name="login" value="Test 7748"/>
         <parameter name="password" value="123Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Авторизация(f) с существующими подходящими паролем и логином(с пробелом в середине пароля)" >
@@ -514,7 +514,7 @@
         <parameter name="login" value="Test7748"/>
         <parameter name="password" value="123 Тест12"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 </suite>

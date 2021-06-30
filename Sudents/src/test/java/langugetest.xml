@@ -5,16 +5,16 @@
         <parameter name="text" value="Log in"/>
         <parameter name="number" value="2"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
     <test name="Французский(ch)" >
         <parameter name="browser" value="chrome"/>
-        <parameter name="text" value="Se connecter'"/>
+        <parameter name="text" value="Se connecter"/>
         <parameter name="number" value="3"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -23,7 +23,7 @@
         <parameter name="text" value="Увійти"/>
         <parameter name="number" value="4"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -32,7 +32,7 @@
         <parameter name="text" value="Wejdź"/>
         <parameter name="number" value="5"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -41,7 +41,7 @@
         <parameter name="text" value="შესვლა"/>
         <parameter name="number" value="6"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -50,7 +50,7 @@
         <parameter name="text" value="Влизане"/>
         <parameter name="number" value="7"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Англиский(f)" >
@@ -58,7 +58,7 @@
         <parameter name="text" value="Log in"/>
         <parameter name="number" value="2"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -67,7 +67,7 @@
         <parameter name="text" value="Se connecter"/>
         <parameter name="number" value="3"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -76,7 +76,7 @@
         <parameter name="text" value="Увійти"/>
         <parameter name="number" value="4"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -85,7 +85,7 @@
         <parameter name="text" value="Wejdź"/>
         <parameter name="number" value="5"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -94,7 +94,7 @@
         <parameter name="text" value="შესვლა"/>
         <parameter name="number" value="6"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -103,7 +103,7 @@
         <parameter name="text" value="Влизане"/>
         <parameter name="number" value="7"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
     <test name="Англиский(ed)" >
@@ -111,7 +111,7 @@
         <parameter name="text" value="Log in"/>
         <parameter name="number" value="2"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -120,7 +120,7 @@
         <parameter name="text" value="Se connecter"/>
         <parameter name="number" value="3"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -129,7 +129,7 @@
         <parameter name="text" value="Увійти"/>
         <parameter name="number" value="4"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -138,7 +138,7 @@
         <parameter name="text" value="Wejdź"/>
         <parameter name="number" value="5"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -147,7 +147,7 @@
         <parameter name="text" value="შესვლა"/>
         <parameter name="number" value="6"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 
@@ -156,7 +156,7 @@
         <parameter name="text" value="Влизане"/>
         <parameter name="number" value="7"/>
         <classes>
-            <class name="LoginTest"/>
+            <class name="loginPage.LoginTest"/>
         </classes>
     </test>
 </suite>

@@ -1,3 +1,5 @@
+package loginPage;
+import loginPage.loginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
     private WebDriver driver;
+    private loginPage loginPage;
 
     @BeforeMethod
     @Parameters({"browser"})
@@ -21,6 +24,7 @@ public class LoginTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
     }
+
     public WebDriver getBrowser(String browser) {
         if (browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
@@ -40,42 +44,24 @@ public class LoginTest {
     @Test(description = "Изменмение языка")
     @Parameters({"text", "number"})
     public void languageTest(String text, String number){
-
-        WebElement languageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
-        languageTest.click();
-
-        WebElement lanButtonTest = driver.findElement(By.xpath("//*[@id='lang-dropdown']/div/div/ul/li["+number+"]"));
-        lanButtonTest.click();
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='"+text+"']"));
-        Assert.assertTrue(loginButton.isDisplayed(), "Неверный язык");
+        loginPage = new loginPage(driver);
+        loginPage
+                .openLanguageList()
+                .ChooseLanguage(number)
+                .checkLanguage(text);
     }
-
 
     @Test(description = "Авторизация на форме")
     @Parameters({"login", "password", "test"})
     public void loginTest(String login, String password, String test) {
-
-        WebElement loginInput = driver.findElement(By.name("username"));
-        loginInput.sendKeys(login);
-
-        WebElement passwordInput = driver.findElement(By.name("password"));
-        passwordInput.sendKeys(password);
-
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='Войти']"));
-        loginButton.click();
-
-        errorMessagesForPositiveAndNegativeLoginTests(test);
+        loginPage = new loginPage(driver);
+        loginPage
+                .setLogin(login)
+                .setPassword(password)
+                .clickEnter()
+                .errorMessages(test);
     }
-    private void errorMessagesForPositiveAndNegativeLoginTests(String test){
-        if (test.equals("-")) {
-            WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
-            Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
-        } else {
-            String url = driver.getCurrentUrl();
-            Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
-        }
-    }
+
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
     private void closeDriver() {
