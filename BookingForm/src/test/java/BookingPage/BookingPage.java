@@ -18,9 +18,10 @@ public class BookingPage {
         return this;
     }
 
-    public BookingPage setFirstname() {
+    public BookingPage setFirstname(String name) {
         WebElement firstnameInput = driver.findElement(By.name("firstname"));
-        firstnameInput.sendKeys("Диана");
+        firstnameInput.clear();
+        firstnameInput.sendKeys(name);
         return this;
     }
 
@@ -52,4 +53,7 @@ public class BookingPage {
         WebElement booking = driver.findElement(By.xpath("//*[@id=\"paymentInformation\"]/div/div[2]/div/div/div[1]/div/div/div[3]/div[2]/div[2]/span"));
         booking.click();
     }
+
+
+
 }

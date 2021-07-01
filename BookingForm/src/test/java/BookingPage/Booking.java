@@ -15,10 +15,12 @@ public class Booking {
     private WebDriver driver;
     private BookingPage BookingPage;
     private ChoosingPage ChoosingPage;
+    private  EditPage EditPage;
+    private  DeletePage DeletePage;
 
-    @Test(description = "Авторизация на форме")
+    @Test(description = "Бронирование номера")
     @Parameters()
-    public void bookTest() throws InterruptedException {
+    public void booking() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -28,22 +30,18 @@ public class Booking {
         driver.switchTo().frame(5);
 
         ChoosingPage = new ChoosingPage(driver);
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        ChoosingPage.openRoomList();
-        ChoosingPage.chooseRoom();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        ChoosingPage.clickBookingButton();
-        Thread.sleep(20000);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        ChoosingPage.clickContinueButton();
+        ChoosingPage
+                .openRoomList()
+                .chooseRoom()
+                .clickBookingButton()
+                .clickContinueButton();
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         BookingPage = new BookingPage(driver);
         BookingPage
                 .setLastname()
-                .setFirstname()
+                .setFirstname("Яна")
                 .setMiddlename()
                 .setEmail()
                 .setPhone()
@@ -52,13 +50,35 @@ public class Booking {
 
     }
 
-    @Test
-    public void editBooking() throws InterruptedException {
+    @Test(description = "Изменение брони")
+    public void changeBooking() throws InterruptedException {
+        Thread.sleep(5000);
+        EditPage = new EditPage(driver);
+        EditPage
+                .clickEditContacts()
+                .clickEditContactData();
 
+        BookingPage = new BookingPage(driver);
+        BookingPage
+                .setFirstname("Дианa");
 
+        EditPage
+                .deleteCheckMark()
+                .saveChanges()
+                .clickReturn();
+    }
 
+    @Test(description = "Отмена брони")
+    public void deleteBooking() throws InterruptedException {
+        Thread.sleep(5000);
+        DeletePage = new DeletePage(driver);
+        DeletePage
+                .clickDeleteBooking()
+                .clickContinueDelete()
+                .chooseDeleteReason()
+                .deleteBooking();
 
-
-
+        Thread.sleep(5000);
+        driver.close();
     }
 }
