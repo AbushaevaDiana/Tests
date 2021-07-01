@@ -30,15 +30,6 @@ public class loginPage {
         return this;
     }
 
-    public void errorMessages(String test){
-        if (test.equals("-")) {
-            WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
-            Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
-        } else {
-            String url = driver.getCurrentUrl();
-            Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
-        }
-    }
 
     public loginPage openLanguageList(){
         WebElement languageTest = driver.findElement(By.xpath("//*[@id=\"lang-dropdown\"]/div"));
@@ -46,14 +37,10 @@ public class loginPage {
         return this;
     }
 
-    public loginPage ChooseLanguage(String number){
+    public loginPage сhooseLanguage(String number){
         WebElement lanButtonTest = driver.findElement(By.xpath("//*[@id='lang-dropdown']/div/div/ul/li["+number+"]"));
         lanButtonTest.click();
         return this;
     }
 
-    public void checkLanguage(String text){
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='"+text+"']"));
-        Assert.assertTrue(loginButton.isDisplayed(), "Неверный язык");
-    }
 }

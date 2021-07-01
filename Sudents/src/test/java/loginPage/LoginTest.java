@@ -21,7 +21,7 @@ public class LoginTest {
     @Parameters({"browser"})
     public void setUp(String browser){
         driver = getBrowser(browser);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("https://www.qatl.ru/secure/");
     }
 
@@ -47,8 +47,11 @@ public class LoginTest {
         loginPage = new loginPage(driver);
         loginPage
                 .openLanguageList()
-                .ChooseLanguage(number)
-                .checkLanguage(text);
+                .сhooseLanguage(number);
+    }
+    public void checkLanguage(String text){
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id='login-form']//tl-button[@text='"+text+"']"));
+        Assert.assertTrue(loginButton.isDisplayed(), "Неверный язык");
     }
 
     @Test(description = "Авторизация на форме")
@@ -58,10 +61,17 @@ public class LoginTest {
         loginPage
                 .setLogin(login)
                 .setPassword(password)
-                .clickEnter()
-                .errorMessages(test);
+                .clickEnter();
     }
-
+    public void errorMessages(String test){
+        if (test.equals("-")) {
+            WebElement alert = driver.findElement(By.xpath("//tl-alert[@text='Неверный логин или пароль.']"));
+            Assert.assertTrue(alert.isDisplayed(), "Алерт о неправельном вводе логина или пароля не отобразился");
+        } else {
+            String url = driver.getCurrentUrl();
+            Assert.assertEquals(url, "https://www.qatl.ru/secure/Extranet/#/Proxy/RoomTypeAvailability.aspx", "Вход неосуществлен");
+        }
+    }
 
     @AfterMethod(description = "Закрытие драйвера", alwaysRun = true)
     private void closeDriver() {
