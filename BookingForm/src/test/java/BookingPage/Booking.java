@@ -34,17 +34,16 @@ public class Booking {
         ChoosingPage.chooseRoom();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ChoosingPage.clickBookingButton();
+        Thread.sleep(20000);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        ChoosingPage.clickContinueButton();
 
     }
 
     @Test
     public void bookTest1() throws InterruptedException {
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        ChoosingPage.clickBookingButton();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        ChoosingPage.clickContinueButton();
 
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

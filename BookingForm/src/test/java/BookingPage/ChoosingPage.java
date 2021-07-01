@@ -24,12 +24,12 @@ public class ChoosingPage {
     }
 
     public void clickBookingButton() {
-        WebElement bookingButton = driver.findElement(By.xpath("//*[@id=\"room-stay-id-rs-rt344751-rp320223-877896_adult_1___-\"]/div[2]/span"));
+        WebElement bookingButton = driver.findElement(By.xpath("//*[@id=\"tl-app\"]/div[3]/div[2]/div[1]/header/div[2]/div[1]/div[2]/div"));
         bookingButton.click();
     }
 
     public void clickContinueButton() {
-        WebElement continueButton = driver.findElement(By.xpath("//*[@id=\"tl-app\"]/div[3]/div[2]/div[1]/header/div[2]/div[1]/div[3]"));
+        WebElement continueButton = driver.findElement(By.xpath("//*[@id=\"tl-app\"]/div[3]/div[2]/div[1]/header/div[2]/div[1]/div[3]/div"));
         continueButton.click();
     }
 
