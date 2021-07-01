@@ -38,14 +38,6 @@ public class Booking {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ChoosingPage.clickContinueButton();
 
-    }
-
-    @Test
-    public void bookTest1() throws InterruptedException {
-
-
-
-
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         BookingPage = new BookingPage(driver);
@@ -57,6 +49,16 @@ public class Booking {
                 .setPhone()
                 .setCustomerComment()
                 .clickBooking();
+
+    }
+
+    @Test
+    public void editBooking() throws InterruptedException {
+
+
+
+
+
 
     }
 }
