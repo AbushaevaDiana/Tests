@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class Booking {
     private WebDriver driver;
     private BookingPage BookingPage;
@@ -19,21 +18,27 @@ public class Booking {
 
     @Test(description = "Авторизация на форме")
     @Parameters()
-    public void bookTest() {
+    public void bookTest() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\driver\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("https://bf.qatl.ru/?hotel=7748&date=2021-08-01&nights=1");
         driver.get("https://bf.qatl.ru/?hotel=7748&date=2021-08-01&nights=1&adults=1");
 
+        Thread.sleep(20000);
+        driver.switchTo().frame(5);
 
         ChoosingPage = new ChoosingPage(driver);
 
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ChoosingPage.openRoomList();
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ChoosingPage.chooseRoom();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        ChoosingPage.clickBookingButton();
+
+    }
+
+    @Test
+    public void bookTest1() throws InterruptedException {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ChoosingPage.clickBookingButton();
@@ -46,12 +51,13 @@ public class Booking {
 
         BookingPage = new BookingPage(driver);
         BookingPage
-                    .setLastname()
-                    .setFirstname()
-                    .setMiddlename()
-                    .setEmail()
-                    .setPhone()
-                    .setCustomerComment()
-                    .clickBooking();
+                .setLastname()
+                .setFirstname()
+                .setMiddlename()
+                .setEmail()
+                .setPhone()
+                .setCustomerComment()
+                .clickBooking();
+
     }
 }
